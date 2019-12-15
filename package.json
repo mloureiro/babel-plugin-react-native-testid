@@ -5,6 +5,7 @@
 	"author": "Marcos Loureiro",
 	"license": "MIT",
 	"main": "index.js",
+	"files": ["index.js"],
 	"repository": "github:mloureiro/babel-plugin-react-native-testid",
 	"scripts": {
 		"lint:fix": "eslint --fix \"*.js\" \"test/*.js\"",
