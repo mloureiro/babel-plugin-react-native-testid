@@ -1,19 +1,25 @@
 {
-  "name": "@mloureiro/babel-plugin-react-native-testid",
-  "version": "0.1.0",
-  "description": "Babel plugin to handle testID on both Android and iOS platforms",
-  "author": "Marcos Loureiro",
-  "license": "MIT",
-  "main": "index.js",
-  "repository": "github:mloureiro/babel-plugin-react-native-testid",
-  "scripts": {
-    "test": "jest test/",
-    "prepublish": "npm test"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@babel/plugin-syntax-jsx": "^7.7.4",
-    "babel-plugin-tester": "^8.0.1",
-    "jest": "^24.9.0"
-  }
+	"name": "@mloureiro/babel-plugin-react-native-testid",
+	"version": "0.1.0",
+	"description": "Babel plugin to handle testID on both Android and iOS platforms",
+	"author": "Marcos Loureiro",
+	"license": "MIT",
+	"main": "index.js",
+	"repository": "github:mloureiro/babel-plugin-react-native-testid",
+	"scripts": {
+		"lint:fix": "eslint --fix \"*.js\" \"test/*.js\"",
+		"lint:validate": "eslint \"*.js\" \"test/*.js\"",
+		"test": "jest test/",
+		"prepublish": "npm run lint:validate && npm run test"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/plugin-syntax-jsx": "^7.7.4",
+		"babel-plugin-tester": "^8.0.1",
+		"eslint": "^6.7.2",
+		"eslint-config-prettier": "^6.7.0",
+		"eslint-plugin-prettier": "^3.1.2",
+		"jest": "^24.9.0",
+		"prettier": "^1.19.1"
+	}
 }
