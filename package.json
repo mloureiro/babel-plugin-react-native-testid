@@ -7,7 +7,8 @@
   "main": "index.js",
   "repository": "github:mloureiro/babel-plugin-react-native-testid",
   "scripts": {
-    "test": "jest test/"
+    "test": "jest test/",
+    "prepublish": "npm test"
   },
   "dependencies": {},
   "devDependencies": {
