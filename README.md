@@ -1,5 +1,7 @@
 # React Native testID Babel Plugin
 
+![CI Status](https://github.com/mloureiro/babel-plugin-react-native-testid/workflows/build/badge.svg)
+
 #### What it does:
 
 This plugin transform `testID` JSX attributes into accessibility properties
