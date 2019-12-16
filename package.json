@@ -7,6 +7,14 @@
 	"main": "index.js",
 	"files": ["index.js"],
 	"repository": "github:mloureiro/babel-plugin-react-native-testid",
+	"keywords": [
+		"react-native",
+		"testid",
+		"test-id",
+		"android",
+		"ios",
+		"appium"
+	],
 	"scripts": {
 		"lint:fix": "eslint --fix \"*.js\" \"test/*.js\"",
 		"lint:validate": "eslint \"*.js\" \"test/*.js\"",
