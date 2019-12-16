@@ -3,9 +3,7 @@ const plugin = require('..')
 const path = require('path')
 
 pluginTester({
-	plugin,
+	babelOptions: { plugins: ['@babel/plugin-syntax-jsx'] },
 	fixtures: path.join(__dirname, '__fixtures__'),
-	babelOptions: {
-		plugins: ['@babel/plugin-syntax-jsx']
-	}
+	plugin
 })

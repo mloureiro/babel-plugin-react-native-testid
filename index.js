@@ -35,6 +35,8 @@ const buildMapTestIdFunction = t => originalAttribute =>
 	)
 
 module.exports = function composeTestId({ types }) {
+	if (process.env.BABEL_ENV === 'production') return {}
+
 	const mapTestIdFunction = buildMapTestIdFunction(types)
 
 	return {
