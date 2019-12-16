@@ -5,5 +5,7 @@ const path = require('path')
 pluginTester({
 	plugin,
 	fixtures: path.join(__dirname, '__fixtures__'),
-	babelOptions: { configFile: path.join(__dirname, 'babel.config.json') }
+	babelOptions: {
+		plugins: ['@babel/plugin-syntax-jsx']
+	}
 })
