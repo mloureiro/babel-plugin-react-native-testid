@@ -11,13 +11,20 @@ function readFile(file) {
 }
 
 function buildTestArguments({ type }) {
-	return fs.readdirSync(fixturesPath).map(directory => ({
-		code: readFile(path.join(fixturesPath, directory, 'code.js')),
-		name: directory,
-		output: readFile(
-			path.join(fixturesPath, directory, `${type}.output.js`)
-		)
-	}))
+	return fs.readdirSync(fixturesPath).map(directory => {
+		try {
+			return ({
+				code: readFile(path.join(fixturesPath, directory, 'code.js')),
+				name: directory,
+				output: readFile(
+					path.join(fixturesPath, directory, `${type}.output.js`)
+				)
+			})
+		} catch {
+			return null
+		}
+	})
+		.filter(Boolean)
 }
 
 module.exports = { buildTestArguments }
