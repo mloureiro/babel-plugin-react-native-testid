@@ -14,7 +14,12 @@ test('testID is transformed in develop mode', () => {
 
 	const transformed = fs
 		.readFileSync(
-			path.join(__dirname, '__fixtures__', 'stringLiteral', 'output.js')
+			path.join(
+				__dirname,
+				'__fixtures__',
+				'stringLiteral',
+				'jsx.output.js'
+			)
 		)
 		.toString()
 		.trim()
