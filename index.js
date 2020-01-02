@@ -1,8 +1,9 @@
+const TestIdParameterName = 'id'
 const buildMapTestIdFunction = t => originalAttribute =>
 	t.jsxSpreadAttribute(
 		t.callExpression(
 			t.arrowFunctionExpression(
-				[t.identifier('id')],
+				[t.identifier(TestIdParameterName)],
 				t.blockStatement([
 					t.ifStatement(
 						t.binaryExpression(
@@ -16,11 +17,11 @@ const buildMapTestIdFunction = t => originalAttribute =>
 						t.objectExpression([
 							t.objectProperty(
 								t.stringLiteral('testID'),
-								t.identifier('testID')
+								t.identifier(TestIdParameterName)
 							),
 							t.objectProperty(
 								t.stringLiteral('accessibilityLabel'),
-								t.identifier('testID')
+								t.identifier(TestIdParameterName)
 							),
 							t.objectProperty(
 								t.stringLiteral('accessible'),
