@@ -1,44 +1,18 @@
-const TestIdParameterName = 'id'
-const buildMapTestIdFunction = t => originalAttribute =>
-	t.jsxSpreadAttribute(
-		t.callExpression(
-			t.arrowFunctionExpression(
-				[t.identifier(TestIdParameterName)],
-				t.blockStatement([
-					t.ifStatement(
-						t.binaryExpression(
-							'!==',
-							t.identifier('__DEV__'),
-							t.identifier('true')
-						),
-						t.returnStatement(t.objectExpression([]))
-					),
-					t.returnStatement(
-						t.objectExpression([
-							t.objectProperty(
-								t.stringLiteral('testID'),
-								t.identifier(TestIdParameterName)
-							),
-							t.objectProperty(
-								t.stringLiteral('accessibilityLabel'),
-								t.identifier(TestIdParameterName)
-							),
-							t.objectProperty(
-								t.stringLiteral('accessible'),
-								t.booleanLiteral(true)
-							)
-						])
-					)
-				])
-			),
-			[originalAttribute]
-		)
+const buildTestJsxAttributes = t => value => [
+	t.jsxAttribute(
+		t.jsxIdentifier('accessibilityLabel'),
+		t.jsxExpressionContainer(value)
+	),
+	t.jsxAttribute(
+		t.jsxIdentifier('accessible'),
+		t.jsxExpressionContainer(t.booleanLiteral(true))
 	)
+]
 
 module.exports = function composeTestId({ types }) {
 	if (process.env.BABEL_ENV === 'production') return {}
 
-	const mapTestIdFunction = buildMapTestIdFunction(types)
+	const mapTestIdFunction = buildTestJsxAttributes(types)
 
 	return {
 		name: 'testId Wrapper',
@@ -50,7 +24,7 @@ module.exports = function composeTestId({ types }) {
 					? path.node.value
 					: path.node.value.expression
 
-				path.replaceWith(mapTestIdFunction(value))
+				path.insertAfter(mapTestIdFunction(value))
 			}
 		}
 	}

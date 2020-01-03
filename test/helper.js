@@ -20,7 +20,7 @@ function buildTestArguments({ type }) {
 					path.join(fixturesPath, directory, `${type}.output.js`)
 				)
 			})
-		} catch {
+		} catch (e) {
 			return null
 		}
 	})

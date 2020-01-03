@@ -1,8 +1,1 @@
-<Hello lang='eng' {...(id => {
-  if (__DEV__ !== true) return {};
-  return {
-    "testID": id,
-    "accessibilityLabel": id,
-    "accessible": true
-  };
-})('greetings')} variant='awesome' />;
+<Hello lang='eng' testID='greetings' accessibilityLabel={'greetings'} accessible={true} variant='awesome' />;

@@ -1,0 +1,12 @@
+React.createElement(
+	Wrapper,
+	null,
+	React.createElement(
+		Hello,
+		{
+			testID:"greetings",
+			accessibilityLabel:"greetings",
+			accessible:true
+		}
+	)
+);

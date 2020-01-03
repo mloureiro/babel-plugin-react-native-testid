@@ -3,11 +3,8 @@ const babel = require('@babel/core')
 const { buildTestArguments } = require('./helper')
 
 test.each(
-	buildTestArguments({ type: 'jsx' }).map(({ name, code, output }) => [
-		name,
-		code,
-		output
-	])
+	buildTestArguments({ type: 'jsx' })
+		.map(({ name, code, output }) => [name, code, output])
 )('transform JSX: %s', (_, code, expected) => {
 	const babelConfig = { plugins: ['@babel/plugin-syntax-jsx', plugin] }
 
