@@ -1,8 +1,10 @@
 React.createElement(
 	Hello,
 	{
+		lang:"eng",
 		testID:"greetings",
 		accessibilityLabel:"greetings",
-		accessible:true
+		accessible:true,
+		variant:"awesome"
 	}
 );

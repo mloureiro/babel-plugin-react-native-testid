@@ -1,17 +1,3 @@
-<Wrapper {...(id => {
-  if (__DEV__ !== true) return {};
-  return {
-    "testID": id,
-    "accessibilityLabel": id,
-    "accessible": true
-  };
-})('greetings-wrapper')}>
-  <Hello {...(id => {
-    if (__DEV__ !== true) return {};
-    return {
-      "testID": id,
-      "accessibilityLabel": id,
-      "accessible": true
-    };
-  })('greetings')} />
+<Wrapper testID={'greetings-wrapper'} accessibilityLabel={'greetings-wrapper'} accessible={true}>
+  <Hello testID='greetings' accessibilityLabel={'greetings'} accessible={true} />
 </Wrapper>;

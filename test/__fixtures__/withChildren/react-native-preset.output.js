@@ -4,5 +4,6 @@ React.createElement(
 		testID:"greetings",
 		accessibilityLabel:"greetings",
 		accessible:true
-	}
+	},
+	'hello'
 );
