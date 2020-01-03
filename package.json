@@ -1,6 +1,6 @@
 {
 	"name": "@mloureiro/babel-plugin-react-native-testid",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Babel plugin to handle testID on both Android and iOS platforms",
 	"author": "Marcos Loureiro",
 	"license": "MIT",
