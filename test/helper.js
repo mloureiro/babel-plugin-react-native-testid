@@ -11,19 +11,23 @@ function readFile(file) {
 }
 
 function buildTestArguments({ type }) {
-	return fs.readdirSync(fixturesPath).map(directory => {
-		try {
-			return ({
-				code: readFile(path.join(fixturesPath, directory, 'code.js')),
-				name: directory,
-				output: readFile(
-					path.join(fixturesPath, directory, `${type}.output.js`)
-				)
-			})
-		} catch (e) {
-			return null
-		}
-	})
+	return fs
+		.readdirSync(fixturesPath)
+		.map(directory => {
+			try {
+				return {
+					code: readFile(
+						path.join(fixturesPath, directory, 'code.js')
+					),
+					name: directory,
+					output: readFile(
+						path.join(fixturesPath, directory, `${type}.output.js`)
+					)
+				}
+			} catch (e) {
+				return null
+			}
+		})
 		.filter(Boolean)
 }
 
