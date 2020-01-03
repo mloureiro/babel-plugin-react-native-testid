@@ -1,5 +1,4 @@
 {
-	"extends": ["prettier"],
 	"env": { "es6": true },
 	"rules": {
 		"array-bracket-newline": "off",
